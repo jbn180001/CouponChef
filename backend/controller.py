@@ -19,39 +19,6 @@ api_key = os.environ.get("API_KEY")
 spoon_key = os.environ.get("SPOON_KEY")
 spoon_endpoint = 'https://api.spoonacular.com/recipes/findByIngredients'
 
-
-@app.route("/upload", methods=["POST"])
-@cross_origin()
-def saveImage():
-    
-    # Top 10 recipes 
-    top_ten = sorted_recipes[:10]
-    
-    # Nutrients for the top 10 recipes
-    for id in top_ten:
-        recipe_id = id['id']
-        nutrition_parameters = {
-            'id': recipe_id,
-            'apiKey': api_key
-        }
-        
-        # nutrional response for top 10
-        nutrition_response = requests.get(f'https://api.spoonacular.com/recipes/{recipe_id}/nutritionWidget.json', params=nutrition_parameters)
-        nutrition_data = nutrition_response.json()
-        
-        desired_nutrition = [
-            'Calories', 
-            'Protein', 
-            'Fiber', 
-            'Fat', 
-            'Carbohydrates', 
-            'Sodium'
-            ]
-        
-        for nutrient in desired_nutrition:
-            if nutrient in nutrition_data:
-                value = nutrition_data[nutrient]
-
 @app.route("/test", methods=["POST"])
 @cross_origin()
 def test():
@@ -76,18 +43,21 @@ def test():
     #works
     
     # extract top recipes
-    number_of_dishes = 2
+    number_of_dishes = 6
     top_recipes = sorted_recipes[:number_of_dishes]
     
+    recipes_list = service.templateRecipes(top_recipes, spoon_key)
+
     # save top_recipes
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(script_dir, "data.json")
-    json_string = json.dumps(top_recipes)
-    
-    with open(file_path, "w") as json_file:
-        json_file.write(json_string)
-    
+    file_path = os.path.join(script_dir, "recipes_output.json")
+
+    # Write to a JSON file at the specified file_path
+    with open(file_path, 'w') as file:
+        json.dump(recipes_list, file, indent=4)
+
     return "hello!"
+    
     
 
 if __name__ == "__main__":

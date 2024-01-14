@@ -108,6 +108,33 @@ class Service:
         
         return sorted_recipes
     
+    def templateRecipes(self, top_recipes, spoon_key):
+        recipes_list = []
+        desired_nutrition = ['Calories', 'Protein', 'Fiber', 'Fat', 'Carbohydrates', 'Sodium']
+
+        for index, recipe in enumerate(top_recipes):
+            # Get nutrition data
+            nutrition_response = requests.get(f'https://api.spoonacular.com/recipes/{recipe["id"]}/nutritionWidget.json', params={'apiKey': spoon_key})
+            nutrition_data = nutrition_response.json()
+
+            # Get recipe instructions
+            recipe_response = requests.get(f'https://api.spoonacular.com/recipes/{recipe["id"]}/information', params={'apiKey': spoon_key})
+            recipe_data = recipe_response.json()
+            instructions = recipe_data.get('analyzedInstructions', [{}])[0].get('steps', [])
+
+            # Build recipe info
+            recipe_info = {
+                "title": recipe['title'],
+                "image": recipe['image'],
+                "usedIngredients": [item['name'] for item in recipe['usedIngredients']],
+                "missedIngredients": [item['name'] for item in recipe['missedIngredients']],
+                "nutrition": {nutrient["name"]: f"{nutrient['amount']} {nutrient['unit']}" for nutrient in nutrition_data.get('nutrients', []) if nutrient["name"] in desired_nutrition},
+                "instructions": [f"Step {step['number']}: {step['step']}" for step in instructions]
+            }
+            recipes_list.append(recipe_info)
+       
+        return recipes_list
+    
     
     
     
