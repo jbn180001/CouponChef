@@ -9,7 +9,7 @@ def Spoonacular():
     file_path = "food_prices.json"
 
     print("1")
-
+    
 
     print("2")
     recipes_list = []
@@ -29,7 +29,9 @@ def Spoonacular():
 
         print("4")
         response = requests.get(end_point, params=parameters)
+        print(response)
         sorted_recipes = sorted(response.json(), key=lambda x: x.get('missedIngredientCount', 0))
+        print(sorted_recipes)
 
         print("5")
         # Desired nutrition fields

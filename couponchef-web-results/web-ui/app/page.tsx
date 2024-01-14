@@ -21,9 +21,19 @@ export default function Home({ }: {}) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getFoodItems();
-      // console.log(result);
-      setData(result);
+      const res = await fetch("http://127.0.0.1:8080/getrecipes", {
+        method: 'GET',
+      });
+
+      if (res.ok) {
+        const data = JSON.parse(await res.json());
+        console.log(data)
+        // const data_array: DataType[] = Object.entries(data)
+        // const datavar: DataType = { title: data.title, image: data.image, usedIngredients: data.usedIngredients, missedIngredients: data.missedIngredients, nutrition: data.nutrition, instructions: data.instructions }
+        setData(data);
+      } else {
+        console.error('Failed to fetch:', res.statusText);
+      }
     };
 
     fetchData();
@@ -101,38 +111,41 @@ export default function Home({ }: {}) {
         </div>
       </div>
       <div className="my-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-3 xl:px-0">
-        {data.map(({ title, image, usedIngredients, missedIngredients, nutrition, instructions }) => (
-          <Card
-            key={title}
-            title={title}
-            image={image}
-            description={usedIngredients.join(', ')}
-            missedIngredients={missedIngredients.join(', ')}
-            nutrition={""
-              // <>
-              //   <p>Calories: {nutrition.Calories}</p>
-              //   <p>Protein: {nutrition.Protein}</p>
-              //   <p>Carbs: {nutrition.Carbohydrates}</p>
-              //   <p>Fats: {nutrition.Fat}</p>
-              //   <p>Sodium: {nutrition.Sodium}</p>
-              //   <p>Fiber: {nutrition.Fiber}</p>
-              // </>
-            }
-            recipe={""
-              // instructions.map((instruction, index) => (
-              // <p key={index}>{instruction}</p>
-              // ))
-            }
-            demo={
-              title === "Beautiful, reusable components" ? (
-                <ComponentGrid />
-              ) : (
-                  title
-                )
-            }
-            large={false}
-          />
-        ))}
+        {data ?
+          data.map((card) => (
+            < Card
+              key={card.title}
+              title={card.title}
+              image={card.image}
+              description={card.usedIngredients.join(', ')}
+              missedIngredients={card.missedIngredients.join(', ')}
+              nutrition={
+                // ""
+                <>
+                  <p>Calories: {card.nutrition.Calories}</p>
+                  <p>Protein: {card.nutrition.Protein}</p>
+                  <p>Carbs: {card.nutrition.Carbohydrates}</p>
+                  <p>Fats: {card.nutrition.Fat}</p>
+                  <p>Sodium: {card.nutrition.Sodium}</p>
+                  <p>Fiber: {card.nutrition.Fiber}</p>
+                </>
+              }
+              recipe={
+                // ""
+                card.instructions.map((instruction, index) => (
+                  <p key={index}>{instruction}</p>
+                ))
+              }
+              demo={
+                card.title === "Beautiful, reusable components" ? (
+                  <ComponentGrid />
+                ) : (
+                    card.title
+                  )
+              }
+              large={false}
+            />
+          )) : null}
       </div>
     </>
   );

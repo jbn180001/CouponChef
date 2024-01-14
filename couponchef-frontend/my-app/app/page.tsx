@@ -1,5 +1,12 @@
 'use client';
 
+// import axios from "axios";
+
+// const axiosInstance = axios.create({
+//   baseURL: "http://127.0.0.1:8080",
+//   withCredentials: true,
+// })
+
 import Link from "next/link"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -7,6 +14,16 @@ import { Button } from "@/components/ui/button"
 import { JSX, SVGProps } from "react";
 
 export default function Component() {
+
+  // fetch("http://127.0.0.1:8080/getrecipes", {
+  //   method: 'GET',
+  // }).then(response => console.log(response))
+
+  // axiosInstance.get("/getrecipes").then(resp => {
+  //   console.log(resp);
+  //   return resp
+  // });
+
   async function uploadImage(e: React.MouseEvent<HTMLButtonElement>) {
     e.stopPropagation();
     // Get the selected image file from the input field
@@ -20,8 +37,10 @@ export default function Component() {
     console.log("form appended");
 
     try {
+
+
       // Send the image to the server using fetch
-      const apiUrl = "http://127.0.0.1:5000/upload";
+      const apiUrl = "http://127.0.0.1:8080/upload";
       console.log("request pre-sent");
       const response = await fetch(apiUrl, {
         method: 'POST',
