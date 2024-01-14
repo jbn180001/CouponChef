@@ -1,3 +1,5 @@
+"use client";
+
 import Card from "@/components/home/card";
 import { DEPLOY_URL } from "@/lib/constants";
 import { Github, Twitter } from "@/components/shared/icons";
@@ -5,25 +7,45 @@ import WebVitals from "@/components/home/web-vitals";
 import ComponentGrid from "@/components/home/component-grid";
 import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
-import data from "../../../recipes_output"
+
+// import data from '../../../recipes_output'
+import getFoodItems from '../app/services/FoodService';
+import { useEffect, useState } from "react";
+
+interface nutritiontype { Calories: string, Fat: string, Carbohydrates: string, Sodium: string, Protein: string, Fiber: string }
+interface DataType { title: string, image: string, usedIngredients: string[], missedIngredients: string[], nutrition: nutritiontype, instructions: string[] }
+
+export default function Home({ }: {}) {
+  // export default async function Home() => {
+  const [data, setData] = useState<DataType[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await getFoodItems();
+      // console.log(result);
+      setData(result);
+    };
+
+    fetchData();
+  }, []);
 
 
-export default async function Home() {
-  const { stargazers_count: stars } = await fetch(
-    "https://api.github.com/repos/steven-tey/precedent",
-    {
-      ...(process.env.GITHUB_OAUTH_TOKEN && {
-        headers: {
-          Authorization: `Bearer ${process.env.GITHUB_OAUTH_TOKEN}`,
-          "Content-Type": "application/json",
-        },
-      }),
-      // data will revalidate every 24 hours
-      next: { revalidate: 86400 },
-    },
-  )
-    .then((res) => res.json())
-    .catch((e) => console.log(e));
+  // export default async function Home() {
+  // const { stargazers_count: stars } = await fetch(
+  //   "https://api.github.com/repos/steven-tey/precedent",
+  //   {
+  //     ...(process.env.GITHUB_OAUTH_TOKEN && {
+  //       headers: {
+  //         Authorization: `Bearer ${process.env.GITHUB_OAUTH_TOKEN}`,
+  //         "Content-Type": "application/json",
+  //       },
+  //     }),
+  //     // data will revalidate every 24 hours
+  //     next: { revalidate: 86400 },
+  //   },
+  // )
+  //   .then((res) => res.json())
+  //   .catch((e) => console.log(e));
 
   return (
     <>
@@ -86,19 +108,21 @@ export default async function Home() {
             image={image}
             description={usedIngredients.join(', ')}
             missedIngredients={missedIngredients.join(', ')}
-            nutrition={
-              <>
-                <p>Calories: {nutrition.Calories}</p>
-                <p>Protein: {nutrition.Protein}</p>
-                <p>Carbs: {nutrition.Carbohydrates}</p>
-                <p>Fats: {nutrition.Fat}</p>
-                <p>Sodium: {nutrition.Sodium}</p>
-                <p>Fiber: {nutrition.Fiber}</p>
-              </>
+            nutrition={""
+              // <>
+              //   <p>Calories: {nutrition.Calories}</p>
+              //   <p>Protein: {nutrition.Protein}</p>
+              //   <p>Carbs: {nutrition.Carbohydrates}</p>
+              //   <p>Fats: {nutrition.Fat}</p>
+              //   <p>Sodium: {nutrition.Sodium}</p>
+              //   <p>Fiber: {nutrition.Fiber}</p>
+              // </>
             }
-            recipe={instructions.map((instruction, index) => (
-              <p key={index}>{instruction}</p>
-            ))}
+            recipe={""
+              // instructions.map((instruction, index) => (
+              // <p key={index}>{instruction}</p>
+              // ))
+            }
             demo={
               title === "Beautiful, reusable components" ? (
                 <ComponentGrid />
