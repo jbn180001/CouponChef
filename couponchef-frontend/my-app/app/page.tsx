@@ -7,17 +7,18 @@ import { Button } from "@/components/ui/button"
 import { JSX, SVGProps } from "react";
 
 export default function Component() {
-  async function uploadImage() {
+  async function uploadImage(e: React.MouseEvent<HTMLButtonElement>) {
+    e.stopPropagation();
     // Get the selected image file from the input field
     const imageInput = document.getElementById('image') as HTMLInputElement;
     console.log("Image inputted");
     const imageFile = imageInput?.files ? imageInput.files[0] : null;
-  
+
     // Create a FormData object to send the image file
     const formData = new FormData();
     formData.append('image', imageFile as Blob);
     console.log("form appended");
-  
+
     try {
       // Send the image to the server using fetch
       const apiUrl = "http://127.0.0.1:5000/upload";
@@ -26,14 +27,14 @@ export default function Component() {
         method: 'POST',
         body: formData,
       })
-        .then(response => location.reload())
+        .then(response => console.log(response))
         .catch(err => console.log(err));
       console.log("request sent");
     } catch (error) {
       console.error('Error uploading image:', error);
     }
   }
-  
+
   return (
     <div className="flex flex-col min-h-screen">
       <header className="flex items-center justify-between px-6 py-4 bg-gray-800 text-white">
@@ -56,7 +57,7 @@ export default function Component() {
             <h1 className="text-3xl font-bold">Upload Coupon Ad</h1>
             <p className="text-gray-500 dark:text-gray-400">Please upload your weekly coupon ad</p>
           </div>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={(e) => e.stopPropagation()}>
             <div className="space-y-2">
               <Label htmlFor="title">Title</Label>
               <Input id="title" placeholder="Enter the title of the ad" />
@@ -74,7 +75,7 @@ export default function Component() {
             </Button>
           </form>
           <div className="border rounded-lg p-4" >
-          <div className="mt-4 flex justify-center">
+            <div className="mt-4 flex justify-center">
               <img
                 alt="Ad Image"
                 className="aspect-[1] overflow-hidden rounded-lg object-cover mt-4"
@@ -89,7 +90,7 @@ export default function Component() {
       <footer className="flex items-center justify-center py-4 bg-gray-800 text-white">
         <p>© 2024 CouponChef Inc. All rights reserved.</p>
       </footer>
-    </div>
+    </div >
   )
 }
 
