@@ -18,7 +18,6 @@ try:
     parameters = {
         'ingredients': names,
         'apiKey': api_key,
-        'ignorePantry': False,
         'addRecipeNutrition': True
     }
 
