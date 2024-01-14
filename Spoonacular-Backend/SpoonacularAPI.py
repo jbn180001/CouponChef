@@ -4,11 +4,12 @@ import os
 
 # Spoonacular API
 def Spoonacular():
+    api_key = 'INSERT API KEY HERE'
+    end_point = 'https://api.spoonacular.com/recipes/findByIngredients'
+    file_path = "food_prices.json"
 
     print("1")
-    api_key = 'b95671fa92e44186bbf2b6cb0058d25c'
-    end_point = 'https://api.spoonacular.com/recipes/findByIngredients'
-    file_path = "../food_prices.json"
+
 
     print("2")
     recipes_list = []
