@@ -38,7 +38,7 @@ export default async function Home() {
           className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 [text-wrap:balance] md:text-xl"
           style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
         >
-          Scroll to find meals, nutrition facts, and prices.
+          Scroll to find meals, nutrition facts, and ingredients.
         </p>
         <div
           className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
@@ -68,13 +68,12 @@ export default async function Home() {
           </a>
           <a
             className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
-            href="https://github.com/steven-tey/precedent"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Github />
+            {/* <Github /> */}
             <p>
-              <span className="hidden sm:inline-block">Download JSON</span>
+              <span className="hidden sm:inline-block">Download</span>
             </p>
           </a>
         </div>
@@ -85,7 +84,21 @@ export default async function Home() {
             key={title}
             title={title}
             image={image}
-            description={title}
+            description={usedIngredients.join(', ')}
+            missedIngredients={missedIngredients.join(', ')}
+            nutrition={
+              <>
+                <p>Calories: {nutrition.Calories}</p>
+                <p>Protein: {nutrition.Protein}</p>
+                <p>Carbs: {nutrition.Carbohydrates}</p>
+                <p>Fats: {nutrition.Fat}</p>
+                <p>Sodium: {nutrition.Sodium}</p>
+                <p>Fiber: {nutrition.Fiber}</p>
+              </>
+            }
+            recipe={instructions.map((instruction, index) => (
+              <p key={index}>{instruction}</p>
+            ))}
             demo={
               title === "Beautiful, reusable components" ? (
                 <ComponentGrid />

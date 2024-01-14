@@ -18,7 +18,6 @@ try:
     parameters = {
         'ingredients': names,
         'apiKey': api_key,
-        'ignorePantry': False,
         'addRecipeNutrition': True
     }
 
@@ -59,5 +58,33 @@ output_file = 'recipes_output.json'
 with open(output_file, 'w') as file:
     json.dump(recipes_list, file, indent=4)
 
-print(f"Saved top 5 recipes to {output_file}")
+data = recipes_list
+
+# Generate TypeScript code
+typescript_code = "import { title } from 'process'\n\n"
+typescript_code += "interface NutritionType { Calories: string; Fat: string; Carbohydrates: string; Sodium: string; Protein: string; Fiber: string }\n"
+typescript_code += "interface DataType { title: string; image: string; usedIngredients: string[]; missedIngredients: string[]; nutrition: NutritionType; instructions: string[] }\n\n"
+typescript_code += "const data: DataType[] = [\n"
+
+# Loop through each item and format it
+for item in data["groceryItems"]:
+    typescript_code += "    {\n"
+    typescript_code += f"        title: \"{item['title']}\",\n"
+    typescript_code += f"        image: \"{item['image']}\",\n"
+    typescript_code += f"        usedIngredients: {json.dumps(item['usedIngredients'])},\n"
+    typescript_code += f"        missedIngredients: {json.dumps(item['missedIngredients'])},\n"
+    typescript_code += f"        nutrition: {json.dumps(item['nutrition'])},\n"
+    typescript_code += f"        instructions: {json.dumps(item['instructions'])}\n"
+    typescript_code += "    },\n"
+
+# Close the array and export statement
+typescript_code += "]\nexport default data"
+
+output_file = 'recipes_output.ts'  # Specify your file path here
+with open(file_path, 'w') as file:
+    file.write(typescript_code)
+
+
+print(f"Saved top 5 recipes to {output_file} JSON")
+print(f"Saved top 5 recipes to {output_file} TypeScript")
 
