@@ -9,10 +9,11 @@ import certifi
 import pymongo
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+from bson import json_util
 from dotenv import load_dotenv
 from openai import OpenAI
 
-sys.path.append(os.path.abspath('../'))
+sys.path.append(os.path.abspath('../Spoonacular-Backend'))
 from SpoonacularAPI import Spoonacular
 
 MONGO_URI = "mongodb+srv://johnqnguyen10:dJPMb7paDUYFHfvN@cluster0.h4nqxna.mongodb.net/?retryWrites=true&w=majority"
@@ -22,19 +23,29 @@ collection = MONGO_DB['recipe']
 
 app = Flask(__name__)
 CORS(app)
-app.config["CORS_HEADERS"] = 'Content-Type'
+# app.config["CORS_HEADERS"] = 'Content-Type'
 
 load_dotenv()
 api_key = os.environ.get("API_KEY")
+
+@app.route("/", methods=["GET"])
+def home():
+    return "Hello"
 
 @app.route("/getrecipes", methods=["GET"])
 @cross_origin()
 def getRecipes():
     print("1")
+    # return jsonify({"data": "hi"})
+    # response = flask.jsonify({'some': 'data'})
+    # response.headers.add('Access-Control-Allow-Origin', '*')
+    # return response
     collection.find()
     recipes = list(collection.find())
     print(recipes)
-    return recipes
+    for item in recipes:
+        del item["_id"]
+    return jsonify(json_util.dumps(recipes))
 
 @app.route("/upload", methods=["POST"])
 @cross_origin()
@@ -108,9 +119,8 @@ def saveImage():
         print("i'm here")
         json_data = Spoonacular()
         print(json_data)
+        collection.delete_many({})
         collection.insert_many(json_data)
-        return jsonify(json_data)
-
 
     else:
         return "No image file uploaded"
@@ -119,5 +129,5 @@ def saveImage():
 
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run(port=8080)
 

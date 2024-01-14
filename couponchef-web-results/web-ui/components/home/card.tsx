@@ -20,8 +20,8 @@ export default function Card({
   demo: ReactNode;
   large?: boolean;
   missedIngredients: string;
-  recipe: string;
-  nutrition: string;
+  recipe: ReactNode;
+  nutrition: ReactNode;
 }) {
 
   const [isModalVisible1, setIsModalVisible1] = useState(false);

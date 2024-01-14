@@ -1,12 +1,12 @@
 {
     "groceryItems": [
         {
-            "name": "Envy Apples",
+            "name": "Envy Apples, 2 lb Bag",
             "price": "$2.49",
             "unit": "Member Price"
         },
         {
-            "name": "Signature Farms Salad Blends",
+            "name": "Signature SELECT\u00ae Salad Bowls, 4.5 to 7.5 oz",
             "price": "$2.99",
             "unit": "Member Price"
         },
@@ -16,79 +16,64 @@
             "unit": "lb"
         },
         {
-            "name": "Jumbo Artichokes",
+            "name": "Jumbo Artichoke",
             "price": "2 for $6",
-            "unit": "Member Price"
+            "unit": "Mix or Match"
         },
         {
-            "name": "Cuties Mandarins",
+            "name": "Cuties\u00ae Mandarins, 3 lb Bag",
             "price": "$6.99",
             "unit": "Member Price"
         },
         {
             "name": "Cucumber, Red or Green Bell Pepper",
             "price": "10 for $10",
-            "unit": "Member Price"
+            "unit": "Mix or Match"
         },
         {
-            "name": "POM Wonderful Pomegranates",
+            "name": "POM Wonderful Pomegranate Juice, 48 oz",
             "price": "$3.99",
             "unit": "Member Price"
         },
         {
-            "name": "Organic Blackberries or Raspberries",
+            "name": "O Organics\u00ae Raspberries, 6 oz",
             "price": "$2.99",
-            "unit": "ea Member Price"
+            "unit": "Member Price"
         },
         {
             "name": "Red Seedless Grapes",
             "price": "$5.99",
-            "unit": "lb Member Price"
+            "unit": "Member Price"
         },
         {
-            "name": "Garlic or Shallots",
+            "name": "Garlic or Shallots, 5 oz",
             "price": "2 for $1",
             "unit": "Member Price"
         },
         {
-            "name": "Grab 'n Go Mixed Berries",
-            "price": "$5",
-            "unit": "Ea"
+            "name": "Grab 'n Go Mixed Berries, Fresh Cut",
+            "price": "$5.00",
+            "unit": "Member Price"
         },
         {
-            "name": "Coconut or Berry Acai Bowl",
-            "price": "$5",
-            "unit": "Ea"
+            "name": "Coconut or Ebony Gala Grapes, Fresh Cut",
+            "price": "$5.00",
+            "unit": "Member Price"
         },
         {
-            "name": "Asparagus Spears",
-            "price": "$5",
-            "unit": "Ea"
+            "name": "Asparagus Spears, Fresh Cut",
+            "price": "$5.00",
+            "unit": "Member Price"
         },
         {
-            "name": "Organic Tomatoes On-the-Vine",
+            "name": "Organic Tomatoes on the Vine",
             "price": "$3.99",
-            "unit": "lb Member Price"
+            "unit": "lb (Member Price)"
         },
         {
-            "name": "Fresh Baked Muffins",
+            "name": "Fresh Baked Muffins, 4 ct",
             "price": "$3.99",
-            "unit": "Member Price"
-        },
-        {
-            "name": "Fresh Baked Pudding Ring",
-            "price": "$5",
-            "unit": "ea Member Price"
-        },
-        {
-            "name": "Tulips",
-            "price": "$8.99",
-            "unit": "Member Price"
-        },
-        {
-            "name": "Assorted Foliage",
-            "price": "15% off",
-            "unit": "Member Price"
+            "unit": "NA"
         }
     ]
 }
