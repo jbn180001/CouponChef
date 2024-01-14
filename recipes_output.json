@@ -1,0 +1,166 @@
+[
+    {
+        "title": "Tomato Cucumber Salad",
+        "image": "https://spoonacular.com/recipeImages/663587-312x231.jpg",
+        "usedIngredients": [
+            "cherry tomatoes",
+            "cucumber",
+            "shallot"
+        ],
+        "missedIngredients": [
+            "garlic",
+            "lemon juice",
+            "olive oil",
+            "salt and pepper"
+        ],
+        "nutrition": {
+            "Calories": "168.4 kcal",
+            "Fat": "14.3 g",
+            "Carbohydrates": "9.81 g",
+            "Sodium": "17.38 mg",
+            "Protein": "2.07 g",
+            "Fiber": "1.88 g"
+        },
+        "instructions": [
+            "Step 1: Heat the olive oil in a skillet.",
+            "Step 2: Add in the chopped shallot and sliced garlic. Stir-fry for over medium heat until lightly golden.",
+            "Step 3: Remove from the heat and stir in lemon juice. Season with salt and pepper.",
+            "Step 4: Cut the cherry tomatoes into halves and the cucumber to 1cm dices.",
+            "Step 5: Transfer them into a salad bowl.",
+            "Step 6: Pour in the dressing and parsley. Toss gently and chill for an hour before serving."
+        ]
+    },
+    {
+        "title": "Garden Fresh Heirloom Tomato, Pepper, and Cucumber Salad",
+        "image": "https://spoonacular.com/recipeImages/644188-312x231.jpg",
+        "usedIngredients": [
+            "heirloom and/or regular tomatoes",
+            "pepper",
+            "cucumber"
+        ],
+        "missedIngredients": [
+            "green onions",
+            "basil leaves",
+            "garlic clove",
+            "balsamic vinegar",
+            "olive oil",
+            "salt and pepper"
+        ],
+        "nutrition": {
+            "Calories": "47.66 kcal",
+            "Fat": "4.7 g",
+            "Carbohydrates": "1.34 g",
+            "Sodium": "196.05 mg",
+            "Protein": "0.26 g",
+            "Fiber": "0.27 g"
+        },
+        "instructions": [
+            "Step 1: Blend all ingredients in a medium bowl.",
+            "Step 2: Add more of any ingredient that you prefer.",
+            "Step 3: Salt and pepper to taste.",
+            "Step 4: Allow the salad to set for a about 15 minutes for all of the juices to blend well together."
+        ]
+    },
+    {
+        "title": "Organic Peach, Cucumber & Golden Tomato Gazpacho",
+        "image": "https://spoonacular.com/recipeImages/654056-312x231.jpg",
+        "usedIngredients": [
+            "tomatoes",
+            "cucumber",
+            "shallot"
+        ],
+        "missedIngredients": [
+            "peaches",
+            "extra virgin olive oil",
+            "champagne vinegar",
+            "basil",
+            "sea salt",
+            "pepper",
+            "water"
+        ],
+        "nutrition": {
+            "Calories": "89.92 kcal",
+            "Fat": "5.77 g",
+            "Carbohydrates": "5.46 g",
+            "Sodium": "247.55 mg",
+            "Protein": "0.74 g",
+            "Fiber": "1.01 g"
+        },
+        "instructions": [
+            "Step 1: In a food processor, place all ingredients except the water and pulse until mixture is coarsely chopped.",
+            "Step 2: Add water and pulse a couple times again until the gazpacho is blended but still a little chunky.",
+            "Step 3: Place in a glass bowl and cover with plastic wrap.",
+            "Step 4: Let refrigerate for 20-25 minutes, or until well chilled.",
+            "Step 5: Serve immediately in small glasses or bowls.",
+            "Step 6: Garnish with diced peach and a cucumber round, if desired."
+        ]
+    },
+    {
+        "title": "Appetizing Apple and Almond Soup",
+        "image": "https://spoonacular.com/recipeImages/632449-312x231.jpg",
+        "usedIngredients": [
+            "apples",
+            "gooseberry",
+            "tomatoes"
+        ],
+        "missedIngredients": [
+            "almonds",
+            "carrots",
+            "cinnamon",
+            "heavy cream",
+            "salt",
+            "sugar",
+            "water"
+        ],
+        "nutrition": {
+            "Calories": "175.96 kcal",
+            "Fat": "6.73 g",
+            "Carbohydrates": "30.01 g",
+            "Sodium": "1190.83 mg",
+            "Protein": "1.79 g",
+            "Fiber": "3.76 g"
+        },
+        "instructions": [
+            "Step 1: Wash and rinse the apples thoroughly.",
+            "Step 2: Cut the apples (with their skin) as well as the gooseberry, tomatoes, and carrots roughly into chunks. Soak almonds in warm water and peel off the skin.In a deep bottomed pan or pressure cooker, boil 3 cups of water.",
+            "Step 3: Add chopped fruits, veggies, almonds.",
+            "Step 4: Let it simmer or pressure cook until 4 whistles.Puree the boiled veggies/fruits in a mixer until smooth.Sieve the soup if desired.Season with salt and sugar to taste.To make the soup creamier, add cream to the soup and simmer for another 5 minutes."
+        ]
+    },
+    {
+        "title": "Baked Ratatouille",
+        "image": "https://spoonacular.com/recipeImages/633754-312x231.jpg",
+        "usedIngredients": [
+            "eggplant",
+            "bell peppers",
+            "tomatoes"
+        ],
+        "missedIngredients": [
+            "feta cheese",
+            "basil",
+            "garlic cloves",
+            "olive oil",
+            "onion cut \" pieces",
+            "red wine vinegar",
+            "zucchini cut"
+        ],
+        "nutrition": {
+            "Calories": "1031.89 kcal",
+            "Fat": "69.71 g",
+            "Carbohydrates": "82.53 g",
+            "Sodium": "1364.23 mg",
+            "Protein": "32.68 g",
+            "Fiber": "27.95 g"
+        },
+        "instructions": [
+            "Step 1: Heat oil in a heavy, large Dutch oven over medium heat.",
+            "Step 2: Add garlic; stir 1 minute.",
+            "Step 3: Add eggplant, green bell peppers, tomatoes, onion, zucchini and basil.",
+            "Step 4: Saute for 5 minutes. Cover and simmer until all vegetables are tender, stirring occasionally, about 25 minutes.Uncover pot and simmer until juice thickens, stirring occasionally, about 10 minutes.",
+            "Step 5: Mix in vinegar; season to taste with salt and pepper.Preheat oven to 350 degrees.",
+            "Step 6: Spread in 9-inch pie dish.",
+            "Step 7: Sprinkle with cheese, if desired.",
+            "Step 8: Bake until heated through, about 20 minutes.This recipe yields about 3 cups."
+        ]
+    }
+]
