@@ -3,7 +3,7 @@ import json
 
 #json stuff
 # insert directory???
-file_path = '/Users/laurenceliao/Documents/GitHub/CouponChef/couponchef-spontacular-backend/sample_food_prices.json'
+file_path = ''
 
 
 #spoonacular stuff
