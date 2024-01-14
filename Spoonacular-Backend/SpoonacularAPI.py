@@ -3,7 +3,7 @@ import json
 import os
 
 # Spoonacular API
-api_key = ''
+api_key = 'INSERT API KEY HERE'
 end_point = 'https://api.spoonacular.com/recipes/findByIngredients'
 file_path = "food_prices.json"
 
