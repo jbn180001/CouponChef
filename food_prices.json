@@ -1,0 +1,94 @@
+{
+    "groceryItems": [
+        {
+            "name": "Envy Apples",
+            "price": "$2.49",
+            "unit": "each"
+        },
+        {
+            "name": "Signature SELECT\u2122 Caf\u00e9 Bowl",
+            "price": "$2.99",
+            "unit": "each"
+        },
+        {
+            "name": "Organic Fuji or Gala Apples",
+            "price": "$2.99",
+            "unit": "lb"
+        },
+        {
+            "name": "Jumbo Artichoke",
+            "price": "$3",
+            "unit": "each"
+        },
+        {
+            "name": "Cuties\u00ae Mandarins 3 lb Bag",
+            "price": "$6.99",
+            "unit": "each"
+        },
+        {
+            "name": "Cucumber, Red or Green Bell Pepper",
+            "price": "$1",
+            "unit": "each"
+        },
+        {
+            "name": "POM Wonderful Pomegranate",
+            "price": "$3.99",
+            "unit": "each"
+        },
+        {
+            "name": "Organic\u00ae Raspberries 6 oz",
+            "price": "$2.99",
+            "unit": "each"
+        },
+        {
+            "name": "Red Globe Grapes",
+            "price": "$2.99",
+            "unit": "lb"
+        },
+        {
+            "name": "Red Cherries",
+            "price": "$5.99",
+            "unit": "lb"
+        },
+        {
+            "name": "Garlic or Shallots",
+            "price": "$0.5",
+            "unit": "each"
+        },
+        {
+            "name": "Fresh Cut Produce Grab 'n Go Mixed Berries",
+            "price": "$5",
+            "unit": "each"
+        },
+        {
+            "name": "Coconut or Brown Ataulfo Variety",
+            "price": "$5",
+            "unit": "each"
+        },
+        {
+            "name": "Asparagus",
+            "price": "$5",
+            "unit": "each"
+        },
+        {
+            "name": "Organic Tomatoes On-the-Vine",
+            "price": "$3.99",
+            "unit": "lb"
+        },
+        {
+            "name": "Fresh Baked Muffins",
+            "price": "$3.99",
+            "unit": "each"
+        },
+        {
+            "name": "Fresh Baked Pudding Ring",
+            "price": "$5",
+            "unit": "each"
+        },
+        {
+            "name": "Tulips 10 Stem",
+            "price": null,
+            "unit": null
+        }
+    ]
+}
