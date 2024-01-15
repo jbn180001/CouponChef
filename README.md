@@ -1,5 +1,5 @@
 # CouponChef
-[](https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/002/717/540/datas/medium.png)
+![](https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/002/717/540/datas/medium.png)
 
 ## [Project Demo](https://www.youtube.com/watch?v=C1cfvL4F5nk)
 
